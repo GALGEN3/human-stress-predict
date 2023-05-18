@@ -36,8 +36,8 @@ ____
 ____
 ### Component diagram
 Диаграмма компонентов, описывающая структуру системы:
-![Component diagram](https://github.com/Valeogamer/fake-news-detection/blob/main/image/2.2.png?raw=true)
+![Component diagram](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/components.png)
 
 ### Activity diagram
-
-![Activity diagram](https://github.com/Valeogamer/fake-news-detection/blob/main/image/1.1.png?raw=true)
+Диаграмма компонентов процесса работы системы:
+![Activity diagram](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/Activity.png)
