@@ -27,7 +27,8 @@ ____
 ![Cloud](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/words_common.png)
 ____
 ## Распределение значений
-![Target](https://github.com/Valeogamer/fake-news-detection/blob/main/image/bal_tar.png?raw=true)
+![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/results.png)
+![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/subreddit_distribution.png)
 ## Диаграммы
 + Component diagram;
 + Activity diagram;
