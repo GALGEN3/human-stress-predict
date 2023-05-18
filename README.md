@@ -26,12 +26,7 @@ ____
 ## Word cloud
 ![Cloud](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/words_common.png)
 ____
-## Target Balance
-#### **Ложных данных:**  __23481__ текстов
-#### **Достоверных данных:**  __21417__ текстов
-#### **Категории:** 'politicsNews', 'worldnews'
-#### **Дата:** 'April 1, 2016 ' - 'September 9, 2017 '
-
+## Распределение значений
 ![Target](https://github.com/Valeogamer/fake-news-detection/blob/main/image/bal_tar.png?raw=true)
 ## Диаграммы
 + Component diagram;
