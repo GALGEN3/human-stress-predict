@@ -22,9 +22,9 @@ ____
 Анализ стрессового состояния человека может помочь в диагностике заболеваний, связанных со стрессом, и, следовательно, поддержать терапевтические решения по их определению и устранению.
 ____
 ## Word cloud
-![Bag](https://github.com/Valeogamer/fake-news-detection/blob/main/image/bag.png?raw=true)
-## Target Balance
+![Cloud](https://github.com/Valeogamer/fake-news-detection/blob/main/image/bag.png?raw=true)
 ____
+## Target Balance
 #### **Ложных данных:**  __23481__ текстов
 #### **Достоверных данных:**  __21417__ текстов
 #### **Категории:** 'politicsNews', 'worldnews'
