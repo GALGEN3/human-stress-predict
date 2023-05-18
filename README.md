@@ -23,7 +23,7 @@ ____
 Анализ стрессового состояния человека может помочь в диагностике заболеваний, связанных со стрессом, и, следовательно, поддержать терапевтические решения по их определению и устранению.
 ____
 ## Word cloud
-![Cloud](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/words_common.png?raw=true)
+![Cloud](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/words_common.png)
 ____
 ## Target Balance
 #### **Ложных данных:**  __23481__ текстов
