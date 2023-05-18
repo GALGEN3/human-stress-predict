@@ -29,12 +29,13 @@ ____
 ## Распределение значений
 ![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/subreddit_distribution.png)
 ![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/results.png)
+____
 ## Диаграммы
 + Component diagram;
 + Activity diagram;
 ____
 ### Component diagram
-
+Диаграмма компонентов, описывающая структуру системы:
 ![Component diagram](https://github.com/Valeogamer/fake-news-detection/blob/main/image/2.2.png?raw=true)
 
 ### Activity diagram
