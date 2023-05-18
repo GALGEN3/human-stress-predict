@@ -27,8 +27,8 @@ ____
 ![Cloud](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/words_common.png)
 ____
 ## Распределение значений
-![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/results.png)
 ![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/subreddit_distribution.png)
+![Results](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/results.png)
 ## Диаграммы
 + Component diagram;
 + Activity diagram;
