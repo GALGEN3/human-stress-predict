@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 
-df_c= pd.read_csv('Stress.csv')
+df= pd.read_csv('Stress.csv')
 
-df=df_c.copy()
+stress=df.copy()
 
 # Регулярные выражения
 import re 
@@ -68,13 +68,14 @@ def split_data(data): # вернет dataframe в котором заданно�
   for i in range(data.shape[0]-1, (data.shape[0] - elements), -1):
     data.drop([i], axis = 0, inplace = True)
 
-df['clean_text']=df['text'].apply(clean_text)
+stress['clean_text']=stress['text'].apply(clean_text)
 
 # Defining target & feature for ML model building
 from sklearn.model_selection import train_test_split
-x=df['clean_text']
-y=df['label']
+x=stress['clean_text']
+y=stress['label']
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+stress.to_csv('stress.csv', index = False)
 x_train.to_csv('x_train.csv')
 x_test.to_csv('x_test.csv')
 y_train.to_csv('y_train.csv')
