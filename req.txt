@@ -1,1 +1,5 @@
 pandas
+numpy
+re
+spacy
+nltk
