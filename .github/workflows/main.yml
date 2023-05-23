@@ -44,12 +44,8 @@ jobs:
         with:
           name: preprocess_file
           path: |
-            fake_add.csv
-            true_add.csv
-            merged.csv
-            Fake_new.csv
-            True_new.csv
-            X_train.csv
-            X_test.csv
-            Y_train.csv
-            Y_test.csv
+            stress.csv
+            x_train.csv
+            x_test.csv
+            y_train.csv
+            y_test.csv
