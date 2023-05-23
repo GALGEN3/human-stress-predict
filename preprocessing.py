@@ -1,6 +1,3 @@
-pip install spacy
-python -m spacy download en_core_web_sm
-
 import numpy as np
 import pandas as pd
 
