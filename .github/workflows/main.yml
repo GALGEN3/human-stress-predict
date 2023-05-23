@@ -38,4 +38,18 @@ jobs:
         run: pip install -r req.txt
       - name: Preprocessing
         run: |
-          python test.py
+          python preprocess.py
+      - name: Upload a Build Artifact - 2
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: preprocess_file
+          path: |
+            fake_add.csv
+            true_add.csv
+            merged.csv
+            Fake_new.csv
+            True_new.csv
+            X_train.csv
+            X_test.csv
+            Y_train.csv
+            Y_test.csv
