@@ -25,7 +25,6 @@ nltk.download('punkt')
 nltk.download('omw-1.4')                                #Multilingual Wordnet Data from OMW
 from nltk.stem import WordNetLemmatizer
 
-from wordcloud import WordCloud, STOPWORDS
 from nltk.corpus import stopwords
 from collections import Counter
 
