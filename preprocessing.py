@@ -74,8 +74,7 @@ from sklearn.model_selection import train_test_split
 x=stress['clean_text']
 y=stress['label']
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
-stress.to_csv('stress.csv', index = False)
-x_train.to_csv('x_train.csv')
-x_test.to_csv('x_test.csv')
-y_train.to_csv('y_train.csv')
-y_test.to_csv('y_test.csv')
+x_train.to_csv('x_train.csv', index = False)
+x_test.to_csv('x_test.csv', index = False)
+y_train.to_csv('y_train.csv', index = False)
+y_test.to_csv('y_test.csv', index = False)
