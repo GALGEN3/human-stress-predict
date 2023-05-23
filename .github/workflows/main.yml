@@ -71,7 +71,7 @@ jobs:
         run: pip install -r req.txt
       - name: Learn and Save
         run: |
-          python learn_and_save.py
+          python learning.py
       - name: Upload a Build Artifact - 4
         uses: actions/upload-artifact@v3.1.2
         with:
