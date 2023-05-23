@@ -77,9 +77,10 @@ jobs:
         with:
           name: save_models
           path: |
-            info.txt
-            model_lr.joblib
-            model_dt.joblib
-            model_gb.joblib
-            model_rf.joblib
-            result.txt
+            model_lr_tf.joblib
+            model_nb_tf.joblib
+            model_dt_tf.joblib
+            model_knn_tf.joblib
+            model_rf_tf.joblib
+            model_ab_tf.joblib
+            results.csv
