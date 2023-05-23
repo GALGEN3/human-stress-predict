@@ -240,4 +240,15 @@ tbl['Model']=pd.Series(['Logistic Regreesion','Multinomial NB','Decision Tree','
 tbl['Accuracy']=pd.Series([acc_lr_tf,acc_nb_tf,acc_dt_tf,acc_knn_tf,acc_rf_tf,acc_ab_tf])
 tbl['F1_Score']=pd.Series([f1_lr_tf,f1_nb_tf,f1_dt_tf,f1_knn_tf,f1_rf_tf,f1_ab_tf])
 tbl.set_index('Model')
+
+# Лучшая модель по версии F1 Score
+tbl.sort_values('F1_Score',ascending=False)
+
 tbl.to_csv('results.csv', index = False)
+
+joblib.dump(model_lr_tf, 'model_lr_tf.joblib')
+joblib.dump(model_nb_tf, 'model_nb_tf.joblib')
+joblib.dump(model_dt_tf, 'model_dt_tf.joblib')
+joblib.dump(model_knn_tf, 'model_knn_tf.joblib')
+joblib.dump(model_rf_tf, 'model_rf_tf.joblib')
+joblib.dump(model_ab_tf, 'model_ab_tf.joblib')
