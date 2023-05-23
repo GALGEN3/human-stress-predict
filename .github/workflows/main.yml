@@ -24,6 +24,10 @@ jobs:
           name: csv-files
           path: |
             *.csv
+      - name: Download artifact - 1
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: csv-files
       - name: Install Python
         uses: actions/setup-python@v4.6.0
         with:
