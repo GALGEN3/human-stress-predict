@@ -1,3 +1,7 @@
+pip install -U pip setuptools wheel
+pip install -U spacy
+python -m spacy download en_core_web_sm
+
 import numpy as np
 import pandas as pd
 
