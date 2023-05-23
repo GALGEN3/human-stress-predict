@@ -1,0 +1,26 @@
+name: human_stress_predict
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download-dataset-processing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.2
+      - name: Install Kaggle API
+        run: pip install kaggle
+      - name: Download dataset from Kaggle
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_NAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_PASS }}
+        run: |
+          kaggle datasets download -d kreeshrajani/human-stress-prediction
+          unzip human-stress-prediction.zip
+      - name: Upload CSV files as artifact - 1
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: csv-files
+          path: |
+            *.csv
