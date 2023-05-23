@@ -35,7 +35,9 @@ jobs:
       - name: Upgrade pip
         run: pip install --upgrade pip
       - name: Install dependencies
-        run: pip install -r req.txt
+        run: |
+          pip install -r req.txt
+          python -m spacy download en_core_web_sm
       - name: Preprocessing
         run: |
           python preprocessing.py
