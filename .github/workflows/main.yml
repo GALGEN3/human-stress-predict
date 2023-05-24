@@ -45,11 +45,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: preprocess_file
-          path: |
-            x_train.csv
-            x_test.csv
-            y_train.csv
-            y_test.csv
+          path: stress.csv
 
   Learn-and-save-models:
     needs: download-dataset-processing
