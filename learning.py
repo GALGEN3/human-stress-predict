@@ -1,6 +1,3 @@
-import pandas as pd
-import numpy as np
-import joblib
 import pickle
 
 # Построение модели
@@ -11,11 +8,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import StackingClassifier,RandomForestClassifier,AdaBoostClassifier
 from sklearn.neighbors import KNeighborsClassifier
-
-# Оценка модели
-from sklearn.metrics import confusion_matrix,classification_report,accuracy_score,f1_score,precision_score
-from sklearn.pipeline import Pipeline
-
 
 with open('vectorizer.pickle', 'rb') as handle:
     vectorizer = pickle.load(handle)
@@ -44,7 +36,6 @@ def model_nb_tf(x_train, x_test, y_train, y_test):
     with open(f'model_nb_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Decision Tree
 def model_dt_tf(x_train, x_test, y_train, y_test):
     
@@ -53,7 +44,6 @@ def model_dt_tf(x_train, x_test, y_train, y_test):
     ovr.fit(x_train, y_train)
     with open(f'model_dt_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
-    
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью KNN.
 def model_knn_tf(x_train, x_test, y_train, y_test):
