@@ -17,10 +17,14 @@ from sklearn.pipeline import Pipeline
 # Время
 from time import time
 
-stress = pd.read_csv('stress.csv')
-x=stress['clean_text']
-y=stress['label']
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+with open('vectorizer.pickle', 'rb') as handle:
+vectorizer = pickle.load(handle)
+with open('features.pickle', 'rb') as handle:
+X = pickle.load(handle)
+with open('label.pickle', 'rb') as handle:
+y = pickle.load(handle)
+
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
