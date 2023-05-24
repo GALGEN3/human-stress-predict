@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  download-dataset-processing:
+  download-dataset:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,6 +24,13 @@ jobs:
           name: csv-files
           path: |
             *.csv
+            
+  processing:
+    needs: download-dataset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.2
       - name: Download artifact - 1
         uses: actions/download-artifact@v3.0.2
         with:
@@ -48,7 +55,7 @@ jobs:
           path: stress.csv
 
   Learn-and-save-models:
-    needs: download-dataset-processing
+    needs: processing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
