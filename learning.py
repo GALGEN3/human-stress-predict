@@ -263,3 +263,41 @@ joblib.dump(model_dt_tf, 'model_dt_tf.joblib')
 joblib.dump(model_knn_tf, 'model_knn_tf.joblib')
 joblib.dump(model_rf_tf, 'model_rf_tf.joblib')
 joblib.dump(model_ab_tf, 'model_ab_tf.joblib')
+
+# Перекрестная проверка, чтобы избежать переобучения
+import statistics as st
+vector = TfidfVectorizer()
+
+x_train_v = vector.fit_transform(x_train)
+x_test_v  = vector.transform(x_test)
+
+# Построение модели
+lr =LogisticRegression()
+mnb=MultinomialNB()
+dct=DecisionTreeClassifier(random_state=1)
+knn=KNeighborsClassifier()
+rf=RandomForestClassifier(random_state=1)
+ab=AdaBoostClassifier(random_state=1)
+m  =[lr,mnb,dct,knn,rf,ab]
+model_name=['Logistic R','MultiNB','DecTRee','KNN','R forest','Ada Boost']
+
+results, mean_results, p, f1_test=list(),list(),list(),list()
+
+# Подгонка модели, перекрестная проверка и оценка производительности
+def algor(model):
+    print('\n',i)
+    pipe=Pipeline([('model',model)])
+    pipe.fit(x_train_v,y_train)
+    cv=StratifiedKFold(n_splits=5)
+    n_scores=cross_val_score(pipe,x_train_v,y_train,scoring='f1_weighted',cv=cv,n_jobs=-1,error_score='raise') # As it is an Imbalance data so f1 score will give a better accuracy than normal accuracy.
+    results.append(n_scores)
+    mean_results.append(st.mean(n_scores))
+    print('f1-Score(train): mean= (%.3f), min=(%.3f)) ,max= (%.3f), stdev= (%.3f)'%(st.mean(n_scores), min(n_scores), max(n_scores),np.std(n_scores)))
+    y_pred=cross_val_predict(model,x_train_v,y_train,cv=cv)
+    p.append(y_pred)
+    f1=f1_score(y_train,y_pred, average = 'weighted')
+    f1_test.append(f1)
+    print('f1-Score(test): %.4f'%(f1))
+
+for i in m:
+    algor(i)
