@@ -6,7 +6,7 @@ import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Построение модели
-from sklearn.model_selection import GridSearchCV,StratifiedKFold,KFold,cross_val_score,cross_val_predict
+from sklearn.model_selection import GridSearchCV,StratifiedKFold,KFold,train_test_split,cross_val_score,cross_val_predict
 from sklearn.linear_model import LogisticRegression,SGDClassifier
 from sklearn import preprocessing
 from sklearn.naive_bayes import MultinomialNB
@@ -21,10 +21,10 @@ from sklearn.pipeline import Pipeline
 # Время
 from time import time
 
-x_train = pd.read_csv('x_train.csv')
-x_test = pd.read_csv('x_test.csv')
-y_train = pd.read_csv('y_train.csv')
-y_test = pd.read_csv('y_test.csv')
+stress = pd.read_csv('stress.csv')
+x=stress['clean_text']
+y=stress['label']
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
