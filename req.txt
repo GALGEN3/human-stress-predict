@@ -1,6 +1,0 @@
-pandas
-numpy
-spacy
-nltk
-joblib
-scikit-learn

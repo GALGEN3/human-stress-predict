@@ -43,7 +43,7 @@ jobs:
         run: pip install --upgrade pip
       - name: Install dependencies
         run: |
-          pip install -r req.txt
+          pip install -r preproc_req.txt
           python -m spacy download en_core_web_sm
       - name: Preprocessing
         run: |
@@ -76,7 +76,7 @@ jobs:
       - name: Upgrade pip
         run: pip install --upgrade pip
       - name: Install dependencies
-        run: pip install -r req.txt
+        run: pip install scikit-learn
       - name: Learn and Save
         run: |
           python learning.py
@@ -113,7 +113,7 @@ jobs:
         - name: Upgrade pip
           run: pip install --upgrade pip
         - name: Install dependencies
-          run: pip install -r req.txt
+          run: pip install -r test_models_req.txt
         - name: Test and results
           run: |
             python test_models.py
