@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 # Векторизация
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -17,10 +20,10 @@ from sklearn.pipeline import Pipeline
 # Время
 from time import time
 
-x_train = read_csv('x_train.csv')
-x_test = read_csv('x_test.csv')
-y_train = read_csv('y_train.csv')
-y_test = read_csv('y_test.csv')
+x_train = pd.read_csv('x_train.csv')
+x_test = pd.read_csv('x_test.csv')
+y_train = pd.read_csv('y_train.csv')
+y_test = pd.read_csv('y_test.csv')
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
