@@ -17,7 +17,6 @@ from sklearn.metrics import confusion_matrix,classification_report,accuracy_scor
 from sklearn.pipeline import Pipeline
 
 
-combined_df = pd.read_csv('main_data.csv')
 with open('vectorizer_old.pickle', 'rb') as handle:
     vectorizer = pickle.load(handle)
 with open('features_old.pickle', 'rb') as handle:

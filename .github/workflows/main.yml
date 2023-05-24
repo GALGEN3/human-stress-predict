@@ -48,13 +48,18 @@ jobs:
       - name: Preprocessing
         run: |
           python preprocessing.py
+          python split_feature.py
       - name: Upload a Build Artifact - 2
         uses: actions/upload-artifact@v3.1.2
         with:
           name: preprocess_file
-          path: stress.csv
+          path: |
+           stress.csv
+           vectorizer.pickle
+           label.pickle
+           features.pickle
 
-  Learn-and-save-models:
+  Learn-models:
     needs: processing
     runs-on: ubuntu-latest
     steps:
@@ -80,11 +85,41 @@ jobs:
         with:
           name: save_models
           path: |
-            model_lr_tf.joblib
-            model_nb_tf.joblib
-            model_dt_tf.joblib
-            model_knn_tf.joblib
-            model_rf_tf.joblib
-            model_ab_tf.joblib
+            model_lr_tf.pickle
+            model_nb_tf.pickle
+            model_dt_tf.pickle
+            model_knn_tf.pickle
+            model_rf_tf.pickle
+            model_ab_tf.pickle
+
+Test-models:
+    needs: Learn-models
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.2
+      - name: Download models
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: save_models
+      - name: Download dataset
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: preprocess_file
+      - name: Install Python
+        uses: actions/setup-python@v4.6.0
+        with:
+          python-version: 3.7
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+      - name: Install dependencies
+        run: pip install -r req.txt
+      - name: Test and results
+        run: |
+          python test_models.py
+      - name: Upload a Build Artifact - 4
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: save_results
+          path: |
             results.csv
-      
