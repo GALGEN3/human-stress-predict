@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import joblib
-
+import pickle
 
 # Построение модели
 from sklearn.model_selection import GridSearchCV,StratifiedKFold,KFold,train_test_split,cross_val_score,cross_val_predict
