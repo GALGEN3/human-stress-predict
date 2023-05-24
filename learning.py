@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import joblib
 
 # Векторизация
 from sklearn.feature_extraction.text import TfidfVectorizer
