@@ -69,9 +69,3 @@ def split_data(data): # вернет dataframe в котором заданно�
 
 stress['clean_text']=stress['text'].apply(clean_text)
 stress.to_csv('stress.csv', index = False)
-
-# Defining target & feature for ML model building
-from sklearn.model_selection import train_test_split
-x=stress['clean_text']
-y=stress['label']
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
