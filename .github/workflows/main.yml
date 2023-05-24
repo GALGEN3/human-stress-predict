@@ -76,7 +76,7 @@ jobs:
       - name: Upgrade pip
         run: pip install --upgrade pip
       - name: Install dependencies
-        run: pip install scikit-learn
+        run: pip install -r models_req.txt
       - name: Learn and Save
         run: |
           python learning.py
@@ -113,7 +113,7 @@ jobs:
         - name: Upgrade pip
           run: pip install --upgrade pip
         - name: Install dependencies
-          run: pip install -r test_models_req.txt
+          run: pip install -r models_req.txt
         - name: Test and results
           run: |
             python test_models.py
