@@ -301,3 +301,27 @@ def algor(model):
 
 for i in m:
     algor(i)
+
+x=stress['clean_text']
+y=stress['label']
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+
+vector = TfidfVectorizer()
+x_train = vector.fit_transform(x_train)
+x_test = vector.transform(x_test)
+model_lr_tf=LogisticRegression()
+
+model_lr_tf.fit(x_train,y_train)
+y_pred=model_lr_tf.predict(x_test)
+# Model Evaluation
+    
+conf=confusion_matrix(y_test,y_pred)
+acc_lr=accuracy_score(y_test,y_pred)
+f1_lr=f1_score(y_test,y_pred,average='weighted')
+
+print('Accuracy: ',acc_lr)
+print('F1 Score: ',f1_lr)
+print(10*'===========')
+print('Confusion Matrix: \n',conf)
+print(10*'===========')
+print('Classification Report: \n',classification_report(y_test,y_pred))
