@@ -9,7 +9,7 @@ x=stress['clean_text']
 y=stress['label']
 
 vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(main_data['text'])
+X = vectorizer.fit_transform(stress['clean_text'])
 with open(f'vectorizer.pickle', 'wb') as handle:
     pickle.dump(vectorizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 with open(f'label.pickle', 'wb') as handle:
