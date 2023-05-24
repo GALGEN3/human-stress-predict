@@ -81,3 +81,10 @@ def model_ab_tf(x_train, x_test, y_train, y_test):
     ovr.fit(x_train, y_train)
     with open(f'model_ab_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
+
+model_lr_tf(x_train, x_test, y_train, y_test)
+model_nb_tf(x_train, x_test, y_train, y_test)
+model_dt_tf(x_train, x_test, y_train, y_test)
+model_knn_tf(x_train, x_test, y_train, y_test)
+model_rf_tf(x_train, x_test, y_train, y_test)
+model_ab_tf(x_train, x_test, y_train, y_test)
