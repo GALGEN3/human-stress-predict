@@ -18,11 +18,11 @@ from sklearn.pipeline import Pipeline
 from time import time
 
 with open('vectorizer.pickle', 'rb') as handle:
-vectorizer = pickle.load(handle)
+    vectorizer = pickle.load(handle)
 with open('features.pickle', 'rb') as handle:
-X = pickle.load(handle)
+    X = pickle.load(handle)
 with open('label.pickle', 'rb') as handle:
-y = pickle.load(handle)
+    y = pickle.load(handle)
 
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
