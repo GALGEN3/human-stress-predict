@@ -24,7 +24,7 @@ y_test = read_csv('y_test.csv')
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
-    global acc_lr_tf,f1_lr_tf
+    global acc_lr_tf,f1_lr_tf,time_lr_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -43,7 +43,8 @@ def model_lr_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_lr_tf=accuracy_score(y_test,y_pred)
     f1_lr_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time :',time()-t0)
+    time_lr_tf=time()-t0
+    print('Time :',time_lr_tf)
     print('Accuracy: ',acc_lr_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -54,7 +55,7 @@ def model_lr_tf(x_train, x_test, y_train, y_test):
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью MultinomialNB.
 def model_nb_tf(x_train, x_test, y_train, y_test):
-    global acc_nb_tf,f1_nb_tf
+    global acc_nb_tf,f1_nb_tf,time_nb_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -73,7 +74,8 @@ def model_nb_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_nb_tf=accuracy_score(y_test,y_pred)
     f1_nb_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time : ',time()-t0)
+    time_nb_tf=time()-t0
+    print('Time : ',time_nb_tf)
     print('Accuracy: ',acc_nb_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -84,7 +86,7 @@ def model_nb_tf(x_train, x_test, y_train, y_test):
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Decision Tree
 def model_dt_tf(x_train, x_test, y_train, y_test):
-    global acc_dt_tf,f1_dt_tf
+    global acc_dt_tf,f1_dt_tf,time_dt_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -103,7 +105,8 @@ def model_dt_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_dt_tf=accuracy_score(y_test,y_pred)
     f1_dt_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time : ',time()-t0)
+    time_dt_tf=time()-t0
+    print('Time : ',time_dt_tf)
     print('Accuracy: ',acc_dt_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -114,7 +117,7 @@ def model_dt_tf(x_train, x_test, y_train, y_test):
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью KNN.
 def model_knn_tf(x_train, x_test, y_train, y_test):
-    global acc_knn_tf,f1_knn_tf
+    global acc_knn_tf,f1_knn_tf,time_knn_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -133,7 +136,8 @@ def model_knn_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_knn_tf=accuracy_score(y_test,y_pred)
     f1_knn_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time : ',time()-t0)
+    time_knn_tf=time()-t0
+    print('Time : ',time_knn_tf)
     print('Accuracy: ',acc_knn_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -142,7 +146,7 @@ def model_knn_tf(x_train, x_test, y_train, y_test):
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Random Forest.
 def model_rf_tf(x_train, x_test, y_train, y_test):
-    global acc_rf_tf,f1_rf_tf
+    global acc_rf_tf,f1_rf_tf,time_rf_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -161,7 +165,8 @@ def model_rf_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_rf_tf=accuracy_score(y_test,y_pred)
     f1_rf_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time : ',time()-t0)
+    time_rf_tf=time()-t0
+    print('Time : ',time_rf_tf)
     print('Accuracy: ',acc_rf_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -170,7 +175,7 @@ def model_rf_tf(x_train, x_test, y_train, y_test):
 
 # Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Adaptive Boosting.
 def model_ab_tf(x_train, x_test, y_train, y_test):
-    global acc_ab_tf,f1_ab_tf
+    global acc_ab_tf,f1_ab_tf,time_ab_tf
     # Трансформация текста в вектор 
     vector = TfidfVectorizer()
     x_train = vector.fit_transform(x_train)
@@ -189,7 +194,8 @@ def model_ab_tf(x_train, x_test, y_train, y_test):
     conf=confusion_matrix(y_test,y_pred)
     acc_ab_tf=accuracy_score(y_test,y_pred)
     f1_ab_tf=f1_score(y_test,y_pred,average='weighted')
-    print('Time : ',time()-t0)
+    time_ab_tf=time()-t0
+    print('Time : ',time_ab_tf)
     print('Accuracy: ',acc_ab_tf)
     print(10*'===========')
     print('Confusion Matrix: \n',conf)
@@ -239,6 +245,7 @@ tbl=pd.DataFrame()
 tbl['Model']=pd.Series(['Logistic Regreesion','Multinomial NB','Decision Tree','KNN','Random Forest','Adaptive Boosting'])
 tbl['Accuracy']=pd.Series([acc_lr_tf,acc_nb_tf,acc_dt_tf,acc_knn_tf,acc_rf_tf,acc_ab_tf])
 tbl['F1_Score']=pd.Series([f1_lr_tf,f1_nb_tf,f1_dt_tf,f1_knn_tf,f1_rf_tf,f1_ab_tf])
+tbl['Time']=pd.Series([time_lr_tf,time_nb_tf,time_dt_tf,time_knn_tf,time_rf_tf,time_ab_tf])
 tbl.set_index('Model')
 
 # Лучшая модель по версии F1 Score
