@@ -41,4 +41,4 @@ ____
 
 ### Activity diagram
 Диаграмма компонентов процесса работы системы:
-![Activity diagram](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/Activity.png)
+![Activity diagram](https://github.com/GALGEN3/human-stress-predict/blob/main/assets/Activity1.png)
