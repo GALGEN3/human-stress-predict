@@ -26,7 +26,7 @@ with open('label.pickle', 'rb') as handle:
 
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
+# Самоопределяющаяся функция для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
     global acc_lr_tf,f1_lr_tf,time_lr_tf
     with open('model_lr_tf.pickle', 'rb') as handle:
@@ -50,7 +50,7 @@ def model_lr_tf(x_train, x_test, y_train, y_test):
     
     return y_test,y_pred,acc_lr_tf
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью MultinomialNB.
+# Самоопределяющаяся функция для классификации и создания модели с помощью MultinomialNB.
 def model_nb_tf(x_train, x_test, y_train, y_test):
     global acc_nb_tf,f1_nb_tf,time_nb_tf
     with open('model_nb_tf.pickle', 'rb') as handle:
@@ -74,7 +74,7 @@ def model_nb_tf(x_train, x_test, y_train, y_test):
     
     return y_test,y_pred,acc_nb_tf
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Decision Tree
+# Самоопределяющаяся функция для классификации и создания модели с помощью Decision Tree
 def model_dt_tf(x_train, x_test, y_train, y_test):
     global acc_dt_tf,f1_dt_tf,time_dt_tf
     with open('model_dt_tf.pickle', 'rb') as handle:
@@ -99,7 +99,7 @@ def model_dt_tf(x_train, x_test, y_train, y_test):
     
     return y_test,y_pred,acc_dt_tf
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью KNN.
+# Самоопределяющаяся функция для классификации и создания модели с помощью KNN.
 def model_knn_tf(x_train, x_test, y_train, y_test):
     global acc_knn_tf,f1_knn_tf,time_knn_tf
     with open('model_knn_tf.pickle', 'rb') as handle:
@@ -122,7 +122,7 @@ def model_knn_tf(x_train, x_test, y_train, y_test):
     print(10*'===========')
     print('Classification Report: \n',classification_report(y_test,y_pred))
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Random Forest.
+# Самоопределяющаяся функция для классификации и создания модели с помощью Random Forest.
 def model_rf_tf(x_train, x_test, y_train, y_test):
     global acc_rf_tf,f1_rf_tf,time_rf_tf
     with open('model_rf_tf.pickle', 'rb') as handle:
@@ -145,7 +145,7 @@ def model_rf_tf(x_train, x_test, y_train, y_test):
     print(10*'===========')
     print('Classification Report: \n',classification_report(y_test,y_pred))
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Adaptive Boosting.
+# Самоопределяющаяся функция для классификации и создания модели с помощью Adaptive Boosting.
 def model_ab_tf(x_train, x_test, y_train, y_test):
     global acc_ab_tf,f1_ab_tf,time_ab_tf
     with open('model_ab_tf.pickle', 'rb') as handle:
