@@ -18,7 +18,7 @@ with open('label.pickle', 'rb') as handle:
 
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью логистической регрессии.
+# Самоопределяющаяся функция для классификации и создания модели с помощью логистической регрессии.
 def model_lr_tf(x_train, x_test, y_train, y_test):
 
     ovr = LogisticRegression()
@@ -27,7 +27,7 @@ def model_lr_tf(x_train, x_test, y_train, y_test):
     with open(f'model_lr_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью MultinomialNB.
+# Самоопределяющаяся функция для классификации и создания модели с помощью MultinomialNB.
 def model_nb_tf(x_train, x_test, y_train, y_test):
     
     ovr = MultinomialNB()
@@ -36,7 +36,7 @@ def model_nb_tf(x_train, x_test, y_train, y_test):
     with open(f'model_nb_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Decision Tree
+# Самоопределяющаяся функция для классификации и создания модели с помощью Decision Tree
 def model_dt_tf(x_train, x_test, y_train, y_test):
     
     ovr = DecisionTreeClassifier(random_state=1)
@@ -45,7 +45,7 @@ def model_dt_tf(x_train, x_test, y_train, y_test):
     with open(f'model_dt_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью KNN.
+# Самоопределяющаяся функция для классификации и создания модели с помощью KNN.
 def model_knn_tf(x_train, x_test, y_train, y_test):
     
     ovr = KNeighborsClassifier()
@@ -54,7 +54,7 @@ def model_knn_tf(x_train, x_test, y_train, y_test):
     with open(f'model_knn_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Random Forest.
+# Самоопределяющаяся функция для классификации и создания модели с помощью Random Forest.
 def model_rf_tf(x_train, x_test, y_train, y_test):
 
     ovr = RandomForestClassifier(random_state=1)
@@ -63,7 +63,7 @@ def model_rf_tf(x_train, x_test, y_train, y_test):
     with open(f'model_rf_tf.pickle', 'wb') as file:
         pickle.dump(ovr, file)
 
-# Самоопределяющаяся функция для преобразования данных в векторную форму с помощью векторизатора tf idf, а также для классификации и создания модели с помощью Adaptive Boosting.
+# Самоопределяющаяся функция для классификации и создания модели с помощью Adaptive Boosting.
 def model_ab_tf(x_train, x_test, y_train, y_test):
 
     ovr = AdaBoostClassifier(random_state=1)
